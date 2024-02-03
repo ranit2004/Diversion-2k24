@@ -7,6 +7,7 @@ from PIL import Image
 import tensorflow as tf
 import requests
 
+
 app = FastAPI()
 
 origins = [
