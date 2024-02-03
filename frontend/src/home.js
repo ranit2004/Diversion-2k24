@@ -163,7 +163,10 @@ export const ImageUpload = () => {
       console.log(formData)
       let res = await axios({
         method: "post",
-        url: 'https://ab16-14-194-176-197.ngrok-free.app/predict',
+        headers: {
+          'ngrok-skip-browser-warning': 'true'
+        },
+        url: 'https://dc03-14-194-176-197.ngrok-free.app/predict',
         data: formData,
       });
       if (res.status === 200) {
