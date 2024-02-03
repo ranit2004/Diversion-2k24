@@ -15,6 +15,8 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
+    "https://diversion-2k24.vercel.app/"
+    "https://diversion-2k24.vercel.app"
 ]
 app.add_middleware(
     CORSMiddleware,
