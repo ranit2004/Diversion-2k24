@@ -220,7 +220,7 @@ export const ImageUpload = () => {
     <React.Fragment>
       <AppBar position="static" className={classes.appbar}>
         <Toolbar>
-          <Typography className={classes.title} variant="h4" noWrap>
+          <Typography className={classes.title} variant="h6" noWrap>
           Leaf Disease Detector
           </Typography>
           <div className={classes.grow} />
