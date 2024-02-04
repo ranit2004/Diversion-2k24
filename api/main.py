@@ -13,8 +13,9 @@ import tensorflow as tf
 app = FastAPI()
 
 origins = [
-    
-    "https://diversion-2k24.vercel.app"
+    "http://localhost",
+    "http://localhost:3000"
+    # "https://diversion-2k24.vercel.app"
     
 ]
 app.add_middleware(
