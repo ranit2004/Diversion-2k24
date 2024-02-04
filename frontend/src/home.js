@@ -223,7 +223,7 @@ export const ImageUpload = () => {
           <Typography className={classes.title} variant="h6" noWrap>
           Leaf Disease Detector
           </Typography>
-          ?<div className={classes.grow} />
+          <div className={classes.grow} />
           {/* <Avatar src={cblogo}></Avatar> */}
         </Toolbar>
       </AppBar>
