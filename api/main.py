@@ -9,30 +9,23 @@ from io import BytesIO
 from PIL import Image
 import tensorflow as tf
 
-
 app = FastAPI()
 
 origins = [
     "http://localhost",
-    "http://localhost:3000"
-    # "https://diversion-2k24.vercel.app"
-    
+    "http://localhost:3000",
 ]
 app.add_middleware(
-     CORSMiddleware,
+    CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_methods=["*"],
     allow_headers=["*"],
 )
 
 MODEL = tf.keras.models.load_model("../saved_models/1")
 
 CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
-
-@app.get("/")
-async def home():
-    return "Server Running"
 
 @app.get("/ping")
 async def ping():
@@ -48,7 +41,7 @@ async def predict(
 ):
     image = read_file_as_image(await file.read())
     img_batch = np.expand_dims(image, 0)
-    
+
     predictions = MODEL.predict(img_batch)
 
     predicted_class = CLASS_NAMES[np.argmax(predictions[0])]
